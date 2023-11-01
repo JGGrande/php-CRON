@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     unzip \
     nano \
+    cron \
     && docker-php-ext-install pdo_mysql zip
 
 # Instale o Composer globalmente
@@ -14,6 +15,9 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 # Copie os arquivos do projeto para o contêiner
 COPY . /var/www
+
+# Dar permissão para a pasta do container
+RUN chown -R 1000:1000 /var/www 
 
 # Configure o diretório de trabalho
 WORKDIR /var/www
