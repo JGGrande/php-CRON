@@ -12,7 +12,7 @@ $dbname = "pedidos";
 
 $db = new DatabaseConnection($host, $port, $username, $password, $dbname);
 
-$query = "INSERT INTO `pedido` (`id`,`nome`, `valor`) VALUES (NULL, 'Mac', 6000.98)";
+$query = "INSERT INTO `pedido` (`nome`, `valor`) VALUES ('Mac', 6000.98)";
 $db->query($query);
 
 echo "<pre>";

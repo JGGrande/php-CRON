@@ -12,7 +12,7 @@ $dbname = "pedidos";
 
 $db = new DatabaseConnection($host, $port, $username, $password, $dbname);
 
-$query = "SELECT * FROM pedido";
+$query = "SELECT * FROM pedido WHERE movimentacao = 0";
 $result = $db->query($query);
 
 print_r($result->fetchAll(PDO::FETCH_OBJ));
